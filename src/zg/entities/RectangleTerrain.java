@@ -5,6 +5,10 @@ package zg.entities;
  */
 public class RectangleTerrain extends Terrain {
 
+	// Movement unit constants
+	private final static int Y_AXIS_MOVEMENT_UNIT = 1;
+	private final static int X_AXIS_MOVEMENT_UNIT = 1;
+
 	private final int maxHorizontal;
 	private final int maxVertical;
 
@@ -19,16 +23,16 @@ public class RectangleTerrain extends Terrain {
 		int y = pos.getY();
 		switch (pos.getOrientation()){
 			case Coordinate.NORTH:
-				y++;
+				y += Y_AXIS_MOVEMENT_UNIT;
 				break;
 			case Coordinate.EAST:
-				x++;
+				x += X_AXIS_MOVEMENT_UNIT;
 				break;
 			case Coordinate.SOUTH:
-				y--;
+				y -= Y_AXIS_MOVEMENT_UNIT;
 				break;
 			case Coordinate.WEST:
-				x--;
+				x -= X_AXIS_MOVEMENT_UNIT;
 				break;
 		}
 
