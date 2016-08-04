@@ -51,7 +51,7 @@ public class Coordinate {
 	}
 
 	public Coordinate(int r, double angle, String orientation){
-		this.r = x;
+		this.r = r;
 		this.angle = angle;
 		this.orientation = orientation;
 		this.coordinateType = CIRCLE_COORDINATE;

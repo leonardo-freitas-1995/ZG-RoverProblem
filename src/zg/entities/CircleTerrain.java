@@ -6,7 +6,7 @@ package zg.entities;
 public class CircleTerrain extends Terrain {
 
 	// Movement unit constants
-	private final static int ARC_MOVEMENT_UNIT = 1;
+	private final static double ARC_MOVEMENT_UNIT = 1;
 	private final static int RADIUS_MOVEMENT_UNIT = 1;
 
 	private final int radius;
@@ -24,17 +24,20 @@ public class CircleTerrain extends Terrain {
 				r += RADIUS_MOVEMENT_UNIT;
 				break;
 			case Coordinate.EAST:
-				angle += (ARC_MOVEMENT_UNIT / this.radius);
+				angle -= (ARC_MOVEMENT_UNIT / this.radius);
 				break;
 			case Coordinate.SOUTH:
 				r -= RADIUS_MOVEMENT_UNIT;
 				break;
 			case Coordinate.WEST:
-				angle -= (ARC_MOVEMENT_UNIT / this.radius);
+				angle += (ARC_MOVEMENT_UNIT / this.radius);
 				break;
 		}
 		if (angle > Math.PI * 2){
 			angle -= Math.PI * 2;
+		}
+		else if (angle < 0){
+			angle += Math.PI * 2;
 		}
 		if (r < 0 || r > this.radius){
 			return null;
