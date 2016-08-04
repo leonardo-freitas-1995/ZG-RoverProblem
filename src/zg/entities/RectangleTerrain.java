@@ -37,6 +37,6 @@ public class RectangleTerrain extends Terrain {
 			return null;
 		}
 
-		return new Coordinate(x + " " + y + " " + pos.getOrientation(), Coordinate.RECTANGLE_COORDINATE);
+		return new Coordinate(x, y, pos.getOrientation());
 	}
 }

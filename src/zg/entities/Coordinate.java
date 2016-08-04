@@ -43,6 +43,20 @@ public class Coordinate {
 		this.coordinateType = coordinateType;
 	}
 
+	public Coordinate(int x, int y, String orientation){
+		this.x = x;
+		this.y = y;
+		this.orientation = orientation;
+		this.coordinateType = RECTANGLE_COORDINATE;
+	}
+
+	public Coordinate(int r, double angle, String orientation){
+		this.r = x;
+		this.angle = angle;
+		this.orientation = orientation;
+		this.coordinateType = CIRCLE_COORDINATE;
+	}
+
 	public int getX() {
 		return x;
 	}
