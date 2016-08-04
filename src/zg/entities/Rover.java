@@ -13,7 +13,7 @@ public class Rover {
 	private Coordinate position;
 	private Terrain terrain;
 
-	public void sendRoverToTerrain(Terrain terrain, Coordinate startPos){
+	public void sendToTerrain(Terrain terrain, Coordinate startPos){
 		this.terrain = terrain;
 		this.position = startPos;
 	}
@@ -75,7 +75,14 @@ public class Rover {
 	}
 
 	public void moveForward(){
-		this.position = this.terrain.moveRover(this.position);
+		Coordinate newPos = this.terrain.moveRover(this.position);
+		if (newPos != null){
+			this.position = newPos;
+		}
+	}
+
+	public Coordinate getPosition(){
+		return this.position;
 	}
 
 }

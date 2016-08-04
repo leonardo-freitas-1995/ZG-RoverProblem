@@ -40,6 +40,7 @@ public class Coordinate {
 			this.angle = Double.parseDouble(coordinateArr[1]);
 			this.orientation = coordinateArr[2];
 		}
+		this.coordinateType = coordinateType;
 	}
 
 	public int getX() {
@@ -68,5 +69,17 @@ public class Coordinate {
 
 	public void setOrientation(String orientation){
 		this.orientation = orientation;
+	}
+
+	@Override
+	public String toString(){
+		String s = "";
+		if (this.coordinateType.equals(RECTANGLE_COORDINATE)){
+			s = this.x + " " + this.y + " " + this.orientation;
+		}
+		else if (this.coordinateType.equals(CIRCLE_COORDINATE)){
+			s = this.r + " " + this.angle + " " + this.orientation;
+		}
+		return s;
 	}
 }
