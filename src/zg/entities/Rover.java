@@ -5,6 +5,11 @@ package zg.entities;
  */
 public class Rover {
 
+	// Movements constants
+	private final static String MOVEMENT_LEFT = "L";
+	private final static String MOVEMENT_RIGHT = "R";
+	private final static String MOVEMENT_FORWARD = "M";
+
 	private Coordinate position;
 	private Terrain terrain;
 
@@ -15,13 +20,13 @@ public class Rover {
 
 	public void makeMovement(String movement){
 		switch (movement){
-			case "L":
+			case MOVEMENT_LEFT:
 				this.turnLeft();
 				break;
-			case "R":
+			case MOVEMENT_RIGHT:
 				this.turnRight();
 				break;
-			case "M":
+			case MOVEMENT_FORWARD:
 				this.moveForward();
 				break;
 		}
@@ -30,17 +35,17 @@ public class Rover {
 	public void turnLeft(){
 		String newOrientation = "";
 		switch (this.position.getOrientation()){
-			case "N":
-				newOrientation = "W";
+			case Coordinate.NORTH:
+				newOrientation = Coordinate.WEST;
 				break;
-			case "E":
-				newOrientation = "N";
+			case Coordinate.EAST:
+				newOrientation = Coordinate.NORTH;
 				break;
-			case "S":
-				newOrientation = "E";
+			case Coordinate.SOUTH:
+				newOrientation = Coordinate.EAST;
 				break;
-			case "W":
-				newOrientation = "S";
+			case Coordinate.WEST:
+				newOrientation = Coordinate.SOUTH;
 				break;
 		}
 		if (!newOrientation.equals("")){
@@ -51,17 +56,17 @@ public class Rover {
 	public void turnRight(){
 		String newOrientation = "";
 		switch (this.position.getOrientation()){
-			case "N":
-				newOrientation = "E";
+			case Coordinate.NORTH:
+				newOrientation = Coordinate.EAST;
 				break;
-			case "E":
-				newOrientation = "S";
+			case Coordinate.EAST:
+				newOrientation = Coordinate.SOUTH;
 				break;
-			case "S":
-				newOrientation = "W";
+			case Coordinate.SOUTH:
+				newOrientation = Coordinate.WEST;
 				break;
-			case "W":
-				newOrientation = "N";
+			case Coordinate.WEST:
+				newOrientation = Coordinate.NORTH;
 				break;
 		}
 		if (!newOrientation.equals("")){

@@ -10,16 +10,16 @@ public class RectangleTerrain extends Terrain {
 		int x = pos.getX();
 		int y = pos.getY();
 		switch (pos.getOrientation()){
-			case "N":
+			case Coordinate.NORTH:
 				y++;
 				break;
-			case "E":
+			case Coordinate.EAST:
 				x++;
 				break;
-			case "S":
+			case Coordinate.SOUTH:
 				y--;
 				break;
-			case "W":
+			case Coordinate.WEST:
 				x--;
 				break;
 		}

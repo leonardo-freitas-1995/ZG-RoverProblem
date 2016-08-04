@@ -5,8 +5,15 @@ package zg.entities;
  */
 public class Coordinate {
 
-	public static String RECTANGLE_COORDINATE = "rect";
-	public static String CIRCLE_COORDINATE = "circle";
+	// Coordinate types constants
+	public final static String RECTANGLE_COORDINATE = "rect";
+	public final static String CIRCLE_COORDINATE = "circle";
+
+	// Orientation constants
+	public final static String NORTH = "N";
+	public final static String EAST = "E";
+	public final static String SOUTH = "S";
+	public final static String WEST = "W";
 
 	private int x;
 	private int y;
