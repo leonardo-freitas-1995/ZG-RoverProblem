@@ -5,15 +5,15 @@ package zg.entities;
  */
 public class Coordinate {
 
-	public String RECTANGLE_COORDINATE = "rect";
-	public String CIRCLE_COORDINATE = "circle";
+	public static String RECTANGLE_COORDINATE = "rect";
+	public static String CIRCLE_COORDINATE = "circle";
 
 	private int x;
 	private int y;
 	private int r;
 	private double angle;
 	private String orientation;
-	private String orientationType;
+	private String coordinateType;
 
 	public Coordinate(String coordinate, String coordinateType){
 		String[] coordinateArr = coordinate.split(" ");
@@ -55,8 +55,8 @@ public class Coordinate {
 		return orientation;
 	}
 
-	public String getOrientationType() {
-		return orientationType;
+	public String getCoordinateType() {
+		return coordinateType;
 	}
 
 	public void setOrientation(String orientation){
