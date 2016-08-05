@@ -5,7 +5,7 @@ package zg.entities;
  */
 public class CircleCoordinate extends Coordinate {
 
-	private static String COORDINATE_TYPE = "RECTANGLE";
+	public final static String COORDINATE_TYPE = "RECTANGLE";
 
 	private int r;
 	private double angle;

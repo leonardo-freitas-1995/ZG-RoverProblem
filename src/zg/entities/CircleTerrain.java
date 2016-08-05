@@ -17,6 +17,9 @@ public class CircleTerrain extends Terrain {
 
 	@Override
 	public Coordinate moveRover(Coordinate coordinate) {
+		if (!coordinate.getCoordinateType().equals(CircleCoordinate.COORDINATE_TYPE)){
+			return null;
+		}
 		CircleCoordinate pos = (CircleCoordinate) coordinate;
 		int r = pos.getR();
 		double angle = pos.getAngle();

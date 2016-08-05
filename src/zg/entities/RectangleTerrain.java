@@ -19,6 +19,9 @@ public class RectangleTerrain extends Terrain {
 
 	@Override
 	public Coordinate moveRover(Coordinate coordinate) {
+		if (!coordinate.getCoordinateType().equals(RectangleCoordinate.COORDINATE_TYPE)){
+			return null;
+		}
 		RectangleCoordinate pos = (RectangleCoordinate) coordinate;
 		int x = pos.getX();
 		int y = pos.getY();
