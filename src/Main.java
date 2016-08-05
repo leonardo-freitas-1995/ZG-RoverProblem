@@ -16,7 +16,7 @@ public class Main {
 		for (int i = 0; i < totalRovers; i++){
 			rover = new Rover();
 			String coord = sc.nextLine();
-			rover.sendToTerrain(terrain, new Coordinate(coord, Coordinate.RECTANGLE_COORDINATE));
+			rover.sendToTerrain(terrain, new RectangleCoordinate(coord));
 			String movements = sc.nextLine();
 			for (String m : movements.split("")){
 				rover.makeMovement(m);
@@ -33,7 +33,7 @@ public class Main {
 		for (int i = 0; i < totalRovers; i++){
 			rover = new Rover();
 			String coord = sc.nextLine();
-			rover.sendToTerrain(terrain, new Coordinate(coord, Coordinate.CIRCLE_COORDINATE));
+			rover.sendToTerrain(terrain, new CircleCoordinate(coord));
 			String movements = sc.nextLine();
 			for (String m : movements.split("")){
 				rover.makeMovement(m);
@@ -43,6 +43,6 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		useCircleScenario();
+		useRectangleScenario();
 	}
 }

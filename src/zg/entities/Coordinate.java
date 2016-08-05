@@ -3,11 +3,7 @@ package zg.entities;
 /**
  * Created by Leonardo on 04/08/2016.
  */
-public class Coordinate {
-
-	// Coordinate types constants
-	public final static String RECTANGLE_COORDINATE = "rect";
-	public final static String CIRCLE_COORDINATE = "circle";
+public abstract class Coordinate {
 
 	// Orientation constants
 	public final static String NORTH = "N";
@@ -15,70 +11,10 @@ public class Coordinate {
 	public final static String SOUTH = "S";
 	public final static String WEST = "W";
 
-	private int x;
-	private int y;
-	private int r;
-	private double angle;
 	private String orientation;
-	private String coordinateType;
-
-	public Coordinate(String coordinate, String coordinateType){
-		String[] coordinateArr = coordinate.split(" ");
-		if (coordinateType.equals(RECTANGLE_COORDINATE)){
-			if (coordinateArr.length != 3){
-				return;
-			}
-			this.x = Integer.parseInt(coordinateArr[0]);
-			this.y = Integer.parseInt(coordinateArr[1]);
-			this.orientation = coordinateArr[2];
-		}
-		else if (coordinateType.equals(CIRCLE_COORDINATE)){
-			if (coordinateArr.length != 3){
-				return;
-			}
-			this.r = Integer.parseInt(coordinateArr[0]);
-			this.angle = Double.parseDouble(coordinateArr[1]);
-			this.orientation = coordinateArr[2];
-		}
-		this.coordinateType = coordinateType;
-	}
-
-	public Coordinate(int x, int y, String orientation){
-		this.x = x;
-		this.y = y;
-		this.orientation = orientation;
-		this.coordinateType = RECTANGLE_COORDINATE;
-	}
-
-	public Coordinate(int r, double angle, String orientation){
-		this.r = r;
-		this.angle = angle;
-		this.orientation = orientation;
-		this.coordinateType = CIRCLE_COORDINATE;
-	}
-
-	public int getX() {
-		return x;
-	}
-
-	public int getY() {
-		return y;
-	}
-
-	public int getR() {
-		return r;
-	}
-
-	public double getAngle() {
-		return angle;
-	}
 
 	public String getOrientation() {
 		return orientation;
-	}
-
-	public String getCoordinateType() {
-		return coordinateType;
 	}
 
 	public void setOrientation(String orientation){
@@ -86,14 +22,6 @@ public class Coordinate {
 	}
 
 	@Override
-	public String toString(){
-		String s = "";
-		if (this.coordinateType.equals(RECTANGLE_COORDINATE)){
-			s = this.x + " " + this.y + " " + this.orientation;
-		}
-		else if (this.coordinateType.equals(CIRCLE_COORDINATE)){
-			s = this.r + " " + this.angle + " " + this.orientation;
-		}
-		return s;
-	}
+	public abstract String toString();
+	public abstract String getCoordinateType();
 }

@@ -18,7 +18,8 @@ public class RectangleTerrain extends Terrain {
 	}
 
 	@Override
-	public Coordinate moveRover(Coordinate pos) {
+	public Coordinate moveRover(Coordinate coordinate) {
+		RectangleCoordinate pos = (RectangleCoordinate) coordinate;
 		int x = pos.getX();
 		int y = pos.getY();
 		switch (pos.getOrientation()){
@@ -41,6 +42,6 @@ public class RectangleTerrain extends Terrain {
 			return null;
 		}
 
-		return new Coordinate(x, y, pos.getOrientation());
+		return new RectangleCoordinate(x, y, pos.getOrientation());
 	}
 }

@@ -16,7 +16,8 @@ public class CircleTerrain extends Terrain {
 	}
 
 	@Override
-	public Coordinate moveRover(Coordinate pos) {
+	public Coordinate moveRover(Coordinate coordinate) {
+		CircleCoordinate pos = (CircleCoordinate) coordinate;
 		int r = pos.getR();
 		double angle = pos.getAngle();
 		switch (pos.getOrientation()){
@@ -43,6 +44,6 @@ public class CircleTerrain extends Terrain {
 			return null;
 		}
 
-		return new Coordinate(r, angle, pos.getOrientation());
+		return new CircleCoordinate(r, angle, pos.getOrientation());
 	}
 }
