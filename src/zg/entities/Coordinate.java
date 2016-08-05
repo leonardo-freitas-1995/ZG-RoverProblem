@@ -11,7 +11,7 @@ public abstract class Coordinate {
 	public final static String SOUTH = "S";
 	public final static String WEST = "W";
 
-	private String orientation;
+	protected String orientation;
 
 	public String getOrientation() {
 		return orientation;

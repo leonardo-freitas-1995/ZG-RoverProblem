@@ -17,13 +17,13 @@ public class CircleCoordinate extends Coordinate {
 		}
 		this.r = Integer.parseInt(coordinateArr[0]);
 		this.angle = Double.parseDouble(coordinateArr[1]);
-		this.setOrientation(coordinateArr[2]);
+		this.orientation = coordinateArr[2];
 	}
 
 	public CircleCoordinate(int r, double angle, String orientation){
 		this.r = r;
 		this.angle = angle;
-		this.setOrientation(orientation);
+		this.orientation = orientation;
 	}
 
 	public int getR() {

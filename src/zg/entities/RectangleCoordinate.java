@@ -17,13 +17,13 @@ public class RectangleCoordinate extends Coordinate {
 		}
 		this.x = Integer.parseInt(coordinateArr[0]);
 		this.y = Integer.parseInt(coordinateArr[1]);
-		this.setOrientation(coordinateArr[2]);
+		this.orientation = coordinateArr[2];
 	}
 
 	public RectangleCoordinate(int x, int y, String orientation){
 		this.x = x;
 		this.y = y;
-		this.setOrientation(orientation);
+		this.orientation = orientation;
 	}
 
 	public int getX() {
