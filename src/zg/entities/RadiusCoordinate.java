@@ -3,14 +3,14 @@ package zg.entities;
 /**
  * Created by Leonardo on 04/08/2016.
  */
-public class CircleCoordinate extends Coordinate {
+public class RadiusCoordinate extends Coordinate {
 
-	public final static String COORDINATE_TYPE = "RECTANGLE";
+	public final static String COORDINATE_TYPE = "RADIUS";
 
 	private int r;
 	private double angle;
 
-	public CircleCoordinate(String coordinate){
+	public RadiusCoordinate(String coordinate){
 		String[] coordinateArr = coordinate.split(" ");
 		if (coordinateArr.length != 3){
 			return;
@@ -20,7 +20,7 @@ public class CircleCoordinate extends Coordinate {
 		this.orientation = coordinateArr[2];
 	}
 
-	public CircleCoordinate(int r, double angle, String orientation){
+	public RadiusCoordinate(int r, double angle, String orientation){
 		this.r = r;
 		this.angle = angle;
 		this.orientation = orientation;

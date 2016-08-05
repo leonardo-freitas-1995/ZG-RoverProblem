@@ -19,10 +19,10 @@ public class RectangleTerrain extends Terrain {
 
 	@Override
 	public Coordinate moveRover(Coordinate coordinate) {
-		if (!coordinate.getCoordinateType().equals(RectangleCoordinate.COORDINATE_TYPE)){
+		if (!coordinate.getCoordinateType().equals(AxesCoordinate.COORDINATE_TYPE)){
 			return null;
 		}
-		RectangleCoordinate pos = (RectangleCoordinate) coordinate;
+		AxesCoordinate pos = (AxesCoordinate) coordinate;
 		int x = pos.getX();
 		int y = pos.getY();
 		switch (pos.getOrientation()){
@@ -45,6 +45,6 @@ public class RectangleTerrain extends Terrain {
 			return null;
 		}
 
-		return new RectangleCoordinate(x, y, pos.getOrientation());
+		return new AxesCoordinate(x, y, pos.getOrientation());
 	}
 }
